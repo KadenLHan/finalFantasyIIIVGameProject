@@ -8,45 +8,51 @@
 
 class Player {
 protected:
-	int HP;
-	int Mana;
-	int armorClass;
-	int specialAttackGuage;
-	std::string Name;
-	std::string specialAttack;
-	std::string ultimateAttack;
+	double HP;											//players hp
+	double Mana;										// PLAYERS MANA 								
+	bool specialAttackGuage;							// player specialAttack Guage to use special attack
+	bool ultimateAttackGuage;
+	std::string name;									//characters Name 
+	std::string specialAttack;							// character's special attack
+	std::string ultimateAttack;							// characters ultimate attack 
 
 
 
 
 public:
 	Player() {
-		int HP = 0;
-		int Mana = 0;
-		int armorClass = 0;
-		int specialAttackGuage = 0;
+		Mana = 0;
+		HP = 0;
 	}
 
-	void getHp() const;
-	int setHp(int);
+	Player(double health) {
+		HP = health;
+	}
 
-	void getMana() const;
-	int setMana(int);
+	Player(double cMana) {
+		Mana = cMana;
+	}
 
-	void getArmorClass() const;
-	int setArmorClass(int);
+	void setHp(double);
+	double getHp() const;
 
-	void getSpecialAttackGuage() const;
-	int setSpecialAttackGuage(int);
+	double getMana() const;
+	void setMana(int);
 
-	void getName() const;
-	std::string setName(std::string);
+	bool getSpecialAttackGuage() const;
+	void setSpecialAttackGuage(bool);
 
-	void getSpecialAttack() const;
-	std::string setSpecialAttack(std::string);
+	std::string getName() const;
+	void setName(std::string);
 
-	void getUltimateAttack() const;
-	std::string setUltimateAttack(std::string);
+	std::string getSpecialAttack() const;
+	void setSpecialAttack(std::string);
+
+	std::string getUltimateAttack() const;
+	void setUltimateAttack(std::string);
+
+	bool getUltimateAttackGuage() const;
+	void setUltimateAttackGuage(bool);
 	
 	
 

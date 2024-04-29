@@ -22,6 +22,10 @@
     <ClInclude Include="universalPlayerInformation.h" />
     <ClInclude Include="universalEnemyInformation.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="universalEnemyInformation.cpp" />
+    <ClCompile Include="universalPlayerInformation.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
