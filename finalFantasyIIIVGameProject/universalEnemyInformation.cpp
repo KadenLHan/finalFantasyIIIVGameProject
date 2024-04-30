@@ -5,9 +5,9 @@ double Enemy::getHP()
 	return HP;
 }
 
-void Enemy::setHP(double HP)
+void Enemy::setHP(double health)
 {
-	double health = HP;
+	HP = health;
 }
 
 bool Enemy::getUseSpecial()
@@ -17,12 +17,12 @@ bool Enemy::getUseSpecial()
 
 void Enemy::setUseSpecial(bool canSpecial)
 {
-	bool useSpecial = canSpecial;
+	 useSpecial = canSpecial;
 }
 
 void Enemy::setUseSpells(bool canSpells)
 {
-	bool useSpells = canSpells;
+	 useSpells = canSpells;
 }
 
 bool Enemy::getUseSpells()
@@ -32,7 +32,7 @@ bool Enemy::getUseSpells()
 
 void Enemy::setName(std::string Name)
 {
-	std::string name = Name;
+	 name = Name;
 }
 
 std::string Enemy::getName()
@@ -52,12 +52,22 @@ std::string Enemy::getSpecialAttack()
 
 void Enemy::setWeakness(std::string weakTo)
 {
-	std::string weakness = weakTo;
+  weakness = weakTo;
 }
 
 std::string Enemy::getWeakness()
 {
 	return std::string(weakness);
+}
+
+void Enemy::setEnemyMovement(std::string eMovement)
+{
+	enemyMovement = eMovement;
+}
+
+std::string Enemy::getEnemyMovement()
+{
+	return std::string(enemyMovement);
 }
 
 

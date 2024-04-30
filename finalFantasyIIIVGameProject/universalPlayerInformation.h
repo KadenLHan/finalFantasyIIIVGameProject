@@ -15,6 +15,7 @@ protected:
 	std::string name;									//characters Name 
 	std::string specialAttack;							// character's special attack
 	std::string ultimateAttack;							// characters ultimate attack 
+	std::string playersMovement;						// if player goes first
 
 
 
@@ -54,7 +55,8 @@ public:
 	bool getUltimateAttackGuage() const;
 	void setUltimateAttackGuage(bool);
 	
-	
+	std::string getPlayerMovement() const;
+	void setPlayerMovement(std::string);
 
 
 	

@@ -14,6 +14,7 @@ protected:
 	std::string name;						// enemy's name
 	std::string specialAttack;				//their special attack(if applicable)
 	std::string weakness;					// enemy's weakness
+	std::string enemyMovement;				//used for who goes first
 
 public:
 
@@ -21,6 +22,7 @@ public:
 		HP = 0;
 		useSpecial = false;
 		useSpells = false;
+		canMove = false;
 	}
 
 	double getHP();
@@ -41,6 +43,8 @@ public:
 	void setWeakness(std::string);
 	std::string getWeakness();
 
+	void setEnemyMovement(std::string);
+	std::string getEnemyMovement();
 
 	
 };

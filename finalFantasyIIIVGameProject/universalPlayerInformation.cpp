@@ -1,8 +1,8 @@
 #include "universalPlayerInformation.h"
 
-void Player::setHp(double HP)
+void Player::setHp(double health)
 {
-	double health = HP;
+	HP = health;
 }
 
 double Player::getHp() const
@@ -11,9 +11,9 @@ double Player::getHp() const
 }
 
 
-void Player::setMana(int Pmana)
+void Player::setMana(int playerMana)
 {
-	double playerMana = Pmana;
+	 Mana = playerMana;
 }
 
 double Player::getMana() const
@@ -28,7 +28,7 @@ bool Player::getSpecialAttackGuage() const
 
 void Player::setSpecialAttackGuage(bool hasSpecial)
 {
-	bool playerSpecial = hasSpecial;
+	 specialAttackGuage = hasSpecial;
 }
 
 std::string Player::getName() const
@@ -38,7 +38,7 @@ std::string Player::getName() const
 
 void Player::setName(std::string characterName)
 {
-	std::string cName = characterName;
+	name = characterName;
 }
 
 std::string Player::getSpecialAttack() const
@@ -48,7 +48,7 @@ std::string Player::getSpecialAttack() const
 
 void Player::setSpecialAttack(std::string characterSpecial)
 {
-	std::string cSpecial = characterSpecial;
+	 specialAttack = characterSpecial;
 }
 
 std::string Player::getUltimateAttack() const
@@ -58,7 +58,7 @@ std::string Player::getUltimateAttack() const
 
 void Player::setUltimateAttack(std::string characterUltimate)
 {
-	std::string cUltimate = characterUltimate;
+	 ultimateAttack = characterUltimate;
 }
 
 bool Player::getUltimateAttackGuage() const
@@ -68,5 +68,15 @@ bool Player::getUltimateAttackGuage() const
 
 void Player::setUltimateAttackGuage(bool hasUltimate)
 {
-	bool playerUltimate = hasUltimate;
+	 ultimateAttackGuage = hasUltimate;
+}
+
+std::string Player::getPlayerMovement() const
+{
+	return playersMovement;
+}
+
+void Player::setPlayerMovement(std::string characterMovement)
+{
+	playersMovement = characterMovement;
 }
