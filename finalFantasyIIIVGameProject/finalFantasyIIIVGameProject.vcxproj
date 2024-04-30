@@ -19,11 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="universalMap.h" />
     <ClInclude Include="universalPlayerInformation.h" />
     <ClInclude Include="universalEnemyInformation.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source.cpp" />
     <ClCompile Include="universalEnemyInformation.cpp" />
+    <ClCompile Include="universalMap.cpp" />
     <ClCompile Include="universalPlayerInformation.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

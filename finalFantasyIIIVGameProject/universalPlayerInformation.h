@@ -11,30 +11,19 @@ protected:
 	double HP;											//players hp
 	double Mana;										// PLAYERS MANA 								
 	bool specialAttackGuage;							// player specialAttack Guage to use special attack
-	bool ultimateAttackGuage;
+	bool ultimateAttackGuage;							// cehcks to see if the player has an ultimate attack during the turn
 	std::string name;									//characters Name 
 	std::string specialAttack;							// character's special attack
 	std::string ultimateAttack;							// characters ultimate attack 
 	std::string playersMovement;						// if player goes first
+	std::string playersWeapon;							// the character's weapon
 
 
 
 
 public:
-	Player() {
-		Mana = 0;
-		HP = 0;
-		specialAttackGuage = false;
-		ultimateAttackGuage = false;
-	}
-
-	Player(double health) {
-		HP = health;
-	}
-
-	Player(double cMana) {
-		Mana = cMana;
-	}
+	
+	Player(double health = 0, double mana = 0):HP(health),Mana(mana),specialAttackGuage(false),ultimateAttackGuage(false){}
 
 	void setHp(double);
 	double getHp() const;
@@ -60,6 +49,8 @@ public:
 	std::string getPlayerMovement() const;
 	void setPlayerMovement(std::string);
 
+	std::string getCharactersWeapon() const;
+	void setCharactersWeapon(std::string);
 
 	
 

@@ -80,3 +80,13 @@ void Player::setPlayerMovement(std::string characterMovement)
 {
 	playersMovement = characterMovement;
 }
+
+std::string Player::getCharactersWeapon() const
+{
+	return std::string(playersWeapon);
+}
+
+void Player::setCharactersWeapon(std::string charactersWeapon)
+{
+	playersWeapon = charactersWeapon;
+}
