@@ -24,6 +24,8 @@ public:
 	Player() {
 		Mana = 0;
 		HP = 0;
+		specialAttackGuage = false;
+		ultimateAttackGuage = false;
 	}
 
 	Player(double health) {

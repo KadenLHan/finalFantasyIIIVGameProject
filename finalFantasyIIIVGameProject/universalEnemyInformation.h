@@ -10,6 +10,7 @@ protected:
 	bool useSpecial;						// if they can use a special attack
 	bool useSpells;							// if they can use spells
 	bool canMove;							// if they can move
+	bool canFly;							// if they can fly
 	std::string damageType;					// if they're melee or ranged
 	std::string name;						// enemy's name
 	std::string specialAttack;				//their special attack(if applicable)
@@ -25,26 +26,29 @@ public:
 		canMove = false;
 	}
 
-	double getHP();
+	double getHP() const;
 	void setHP(double);
 
-	bool getUseSpecial();
+	bool getUseSpecial() const;
 	void setUseSpecial(bool);
 	
 	void setUseSpells(bool);
-	bool getUseSpells();
+	bool getUseSpells() const;
 
 	void setName(std::string);
-	std::string getName();
+	std::string getName() const;
 
 	void setSpecialAttack(std::string);
-	std::string getSpecialAttack();
+	std::string getSpecialAttack() const;
 
 	void setWeakness(std::string);
-	std::string getWeakness();
+	std::string getWeakness() const;
 
 	void setEnemyMovement(std::string);
-	std::string getEnemyMovement();
+	std::string getEnemyMovement() const;
+
+	void setCanFly(bool);
+	bool getCanFly() const;
 
 	
 };

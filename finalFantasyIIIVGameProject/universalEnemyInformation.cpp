@@ -1,6 +1,6 @@
 #include "universalEnemyInformation.h"
 
-double Enemy::getHP()
+double Enemy::getHP() const
 {
 	return HP;
 }
@@ -10,7 +10,7 @@ void Enemy::setHP(double health)
 	HP = health;
 }
 
-bool Enemy::getUseSpecial()
+bool Enemy::getUseSpecial() const
 {
 	return useSpecial;
 }
@@ -25,7 +25,7 @@ void Enemy::setUseSpells(bool canSpells)
 	 useSpells = canSpells;
 }
 
-bool Enemy::getUseSpells()
+bool Enemy::getUseSpells() const
 {
 	return useSpells;
 }
@@ -35,7 +35,7 @@ void Enemy::setName(std::string Name)
 	 name = Name;
 }
 
-std::string Enemy::getName()
+std::string Enemy::getName() const
 {
 	return std::string(name);
 }
@@ -45,7 +45,7 @@ void Enemy::setSpecialAttack(std::string SP)
 	specialAttack = SP;
 }
 
-std::string Enemy::getSpecialAttack()
+std::string Enemy::getSpecialAttack() const
 {
 	return std::string(specialAttack);
 }
@@ -55,7 +55,7 @@ void Enemy::setWeakness(std::string weakTo)
   weakness = weakTo;
 }
 
-std::string Enemy::getWeakness()
+std::string Enemy::getWeakness () const
 {
 	return std::string(weakness);
 }
@@ -65,7 +65,8 @@ void Enemy::setEnemyMovement(std::string eMovement)
 	enemyMovement = eMovement;
 }
 
-std::string Enemy::getEnemyMovement()
+
+std::string Enemy::getEnemyMovement() const
 {
 	return std::string(enemyMovement);
 }
