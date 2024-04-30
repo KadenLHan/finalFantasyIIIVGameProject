@@ -21,7 +21,8 @@ protected:
 	static const char PLAYER = '0';
 	static const char ENEMY = 'X';
 	static const char DOOR = 'D';
-
+	int playerX; 
+	int playerY; 
 
 	
 public:
@@ -39,11 +40,14 @@ public:
 
 	void clearMap(); // used to clear the map
 
-	void placePlayer(int, int);  // used to place player on map
+	void placePlayer(int, int);  // used to place player on map and checks to see if player is near objects or enemies
 
-	void generateWalls();
+	void placeEnemy(int, int);
 
+	void movePlayer(); 
 	
+
+
 };
 
 

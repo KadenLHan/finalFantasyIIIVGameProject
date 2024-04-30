@@ -8,13 +8,18 @@ CIS 1202 101
 #include "universalPlayerInformation.h"
 #include "universalMap.h"
 
+using namespace std;
+
 int main() {
 	Map myMap;
-
-	myMap.generateWalls();
-	myMap.placePlayer(3, 4);
-	myMap.printMap();
-
-
-
+	int SIZE = 10;
+	int i = 0;
+	
+	
+	myMap.placePlayer(2, 3);
+	myMap.placeEnemy(4, 4);
+	for (i = 0; i < SIZE; i++) {
+		myMap.printMap();
+		myMap.movePlayer();
+	}
 }
