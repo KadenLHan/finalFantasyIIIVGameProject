@@ -38,19 +38,19 @@ void Map::printMap() const
             char tile = grid[y][x];
             switch (tile) {
             case WALL:
-                std::cout << "[]";    // Walls
+                std::cout << "[] ";    // Walls
                 break;
             case EMPTY_SPACE:
-                std::cout << ".";     // Empty space
+                std::cout << ". ";     // Empty space
                 break;
             case PLAYER:
-                std::cout << "0";     // Player
+                std::cout << "0 ";     // Player
                 break;
             case ENEMY:
-                std::cout << "X";     // Enemy
+                std::cout << "X ";     // Enemy
                 break;
             case DOOR:
-                std::cout << "D";     // Door
+                std::cout << "D ";     // Door
                 break;
             default:
                 std::cout << tile << " "; // Other characters
@@ -61,20 +61,6 @@ void Map::printMap() const
 	
 }
 
-void Map::updateMap(int x, int y, char symbol)
-{
-
-	grid[y][x] = symbol;
-}
-
-void Map::clearMap()
-{
-	for (auto& row : grid) {
-		for (char& tile : row) {
-			tile = '.';
-		}
-	}
-}
 
 void Map::placePlayer(int x, int y)
 {
