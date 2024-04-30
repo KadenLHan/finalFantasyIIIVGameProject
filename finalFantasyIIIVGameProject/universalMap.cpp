@@ -29,33 +29,36 @@ void Map::setDescriptionOfRoom(std::string roomDescription)
 void Map::printMap() const
 {
 
-	for (const auto& row : grid) {
-		for (char tile : row) {
+	int height = grid.size();
+	int width = grid[0].size();
+
+	for (int y = 0; y < height; ++y) {
+		for (int x = 0; x < width; ++x) {
+			char tile = grid[y][x];
 			switch (tile) {
-			case '#': {
-				std::cout << "[] ";	//walls
+			case WALL:
+				std::cout << "[] ";    // Walls
 				break;
-			}
-			case '.':{
-				std::cout << "."; // White square for empty space
+			case EMPTY_SPACE:
+				std::cout << ". ";     // Empty space
 				break;
-			}
-			case'P': {
-				std::cout << "0"; // 0 for player
+			case PLAYER:
+				std::cout << "P ";     // Player
 				break;
-			}
-			case'X': {
-				std::cout << "X "; // character for enemys
+			case ENEMY:
+				std::cout << "X ";     // Enemy
 				break;
-			}
-			default: {
-				std::cout << tile << " ";
-				
-			}
+			case DOOR:
+				std::cout << "D ";     // Door
+				break;
+			default:
+				std::cout << tile << " "; // Other characters
 			}
 		}
 		std::cout << std::endl;
 	}
+	
+	
 
 	
 }
@@ -78,4 +81,23 @@ void Map::clearMap()
 void Map::placePlayer(int x, int y)
 {
 	grid[y][x] = 'P';
+}
+
+void Map::generateWalls()
+{
+	clearMap();
+
+	int width = grid[0].size();
+	int height = grid.size();
+
+
+
+	for (int y = 0; y < height; ++y) {
+		for (int x = 0; x < width; ++x) {
+			if (y == 0 || y == height - 1 || x == 0 || x == width - 1) {
+				grid[y][x] = WALL; // Place wall if at perimeter
+			}
+		}
+	}
+	
 }

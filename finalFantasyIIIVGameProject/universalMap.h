@@ -15,6 +15,14 @@ protected:
 	std::string nameOfRoom;
 	std::string descriptionOfRoom;
 	std::vector<std::vector<char>> grid;		// used to represent the map layout
+
+	static const char WALL = '[]';
+	static const char EMPTY_SPACE = '.';
+	static const char PLAYER = '0';
+	static const char ENEMY = 'X';
+	static const char DOOR = 'D';
+
+
 	
 public:
 	Map();
@@ -32,6 +40,8 @@ public:
 	void clearMap(); // used to clear the map
 
 	void placePlayer(int, int);  // used to place player on map
+
+	void generateWalls();
 
 	
 };

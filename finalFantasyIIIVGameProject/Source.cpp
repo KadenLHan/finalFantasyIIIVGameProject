@@ -11,8 +11,7 @@ CIS 1202 101
 int main() {
 	Map myMap;
 
-	myMap.printMap();
-
+	myMap.generateWalls();
 	myMap.placePlayer(3, 4);
 	myMap.printMap();
 
