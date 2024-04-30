@@ -71,5 +71,15 @@ std::string Enemy::getEnemyMovement() const
 	return std::string(enemyMovement);
 }
 
+void Enemy::setCanFly(bool enemyFly)
+{
+	canFly = enemyFly;
+}
+
+bool Enemy::getCanFly() const
+{
+	return canFly;
+}
+
 
 
