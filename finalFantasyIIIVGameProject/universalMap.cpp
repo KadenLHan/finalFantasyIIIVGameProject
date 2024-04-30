@@ -3,7 +3,8 @@
 
 Map::Map() :grid(10, std::vector<char>(10, '.'))
 {
-
+    playerX = 0;
+    playerY = 0;
 }
 
 std::string Map::getNameOfRoom() const
@@ -37,19 +38,19 @@ void Map::printMap() const
             char tile = grid[y][x];
             switch (tile) {
             case WALL:
-                std::cout << "[] ";    // Walls
+                std::cout << "[]";    // Walls
                 break;
             case EMPTY_SPACE:
-                std::cout << ". ";     // Empty space
+                std::cout << ".";     // Empty space
                 break;
             case PLAYER:
-                std::cout << "P ";     // Player
+                std::cout << "0";     // Player
                 break;
             case ENEMY:
-                std::cout << "X ";     // Enemy
+                std::cout << "X";     // Enemy
                 break;
             case DOOR:
-                std::cout << "D ";     // Door
+                std::cout << "D";     // Door
                 break;
             default:
                 std::cout << tile << " "; // Other characters
@@ -92,13 +93,37 @@ void Map::placePlayer(int x, int y)
   
 }
 
-void Map::placeEnemy(int y, int x)
+void Map::placeEnemy(int x, int y)
 {
-    if (grid[y][x] == EMPTY_SPACE) {
+    if (x >= 0 && x < grid[0].size() && y >= 0 && y < grid.size()) {
+
         grid[y][x] = ENEMY;
     }
     else {
-        std::cout << "Cannot place enemy at this position." << std::endl;
+        std::cout << "Invalid position for adding a ENEMY!" << std::endl;
+    }
+}
+
+void Map::placeWall(int x, int y)
+{
+    
+    if (x >= 0 && x < grid[0].size() && y >= 0 && y < grid.size()) {
+        
+        grid[y][x] = WALL;
+    }
+    else {
+        std::cout << "Invalid position for adding a wall!" << std::endl;
+    }
+}
+
+void Map::placeDoor(int x, int y)
+{
+    if (x >= 0 && x < grid[0].size() && y >= 0 && y < grid.size()) {
+
+        grid[y][x] = DOOR;
+    }
+    else {
+        std::cout << "Invalid position for adding a DOOR!" << std::endl;
     }
 }
 
@@ -131,16 +156,36 @@ void Map::movePlayer()
         return; // Exit the function if direction is invalid
     }
 
-    // Check if the new position is within the map boundaries and is not a wall
-    if (newX >= 0 && newX < grid[0].size() && newY >= 0 && newY < grid.size() && grid[newY][newX] != WALL) {
-        // Move the player to the new position
-        grid[playerY][playerX] = EMPTY_SPACE; // Clear current position
-        playerX = newX; // Update player's x-coordinate
-        playerY = newY; // Update player's y-coordinate
-        grid[playerY][playerX] = PLAYER; // Place player at the new position
+    // Check if the new position is within the map boundaries
+    if (newX < 0 || newX >= grid[0].size() || newY < 0 || newY >= grid.size()) {
+        std::cout << "Cannot move outside of the map!" << std::endl;
+        return;
     }
-    else {
-        std::cout << "Cannot move in that direction!" << std::endl;
+
+    // Check if the new position is not a wall
+    if (grid[newY][newX] == WALL) {
+        std::cout << "Cannot move into a wall!" << std::endl;
+        return;
     }
+
+    // Check if the new position is an enemy
+    if (grid[newY][newX] == ENEMY) {
+        std::cout << "Prepare for combat!" << std::endl;
+        // Implement combat logic here
+        return;
+    }
+
+    // Check if the new position is a door
+    if (grid[newY][newX] == DOOR) {
+        std::cout << "You encountered a door! Generating a new room..." << std::endl;
+        // Generate a different room (to be implemented)
+        return;
+    }
+
+    // Move the player to the new position
+    grid[playerY][playerX] = EMPTY_SPACE; // Clear current position
+    playerX = newX; // Update player's x-coordinate
+    playerY = newY; // Update player's y-coordinate
+    grid[playerY][playerX] = PLAYER; // Place player at the new position
 }
 

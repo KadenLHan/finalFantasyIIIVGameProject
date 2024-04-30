@@ -35,16 +35,16 @@ public:
 	void setDescriptionOfRoom(std::string);
 
 	void printMap() const;
-
 	void updateMap(int, int,char); // x and y are cordinates, symbol is used to differentiate between player/object/enemy
-
 	void clearMap(); // used to clear the map
-
 	void placePlayer(int, int);  // used to place player on map and checks to see if player is near objects or enemies
-
 	void placeEnemy(int, int);
+	void placeWall(int, int);
+	void placeDoor(int, int);
 
 	void movePlayer(); 
+
+	
 	
 
 
