@@ -12,16 +12,17 @@ using namespace std;
 
 int main() {
 	Map myMap;
-	int SIZE = 10;
+	 
+	int SIZE = 20;
 	int i = 0;
 	
-	
-	myMap.placePlayer(2, 3);
-	myMap.placeEnemy(4, 4);
-	myMap.placeWall(2, 2);
-	myMap.placeDoor(2, 5);
-	for (i = 0; i < SIZE; i++) {
-		myMap.printMap();
-		myMap.movePlayer();
+
+	myMap.printMap();
+	while (true) {
+		if (myMap.movePlayer()) {
+
+			myMap.printMap();
+		}
 	}
+
 }

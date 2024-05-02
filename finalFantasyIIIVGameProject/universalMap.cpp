@@ -1,7 +1,7 @@
 #include "universalMap.h"
 
 
-Map::Map() :grid(10, std::vector<char>(10, '.'))
+Map::Map() :grid(10, std::vector<char>(5, '.'))
 {
     playerX = 0;
     playerY = 0;
@@ -113,9 +113,10 @@ void Map::placeDoor(int x, int y)
     }
 }
 
-void Map::movePlayer()
+bool Map::movePlayer()
 {
     char direction;
+    int roomNumber = 0;
     std::cout << "Enter direction (w = up, a = left, s = down, d = right): ";
     std::cin >> direction;
 
@@ -139,33 +140,46 @@ void Map::movePlayer()
         break;
     default:
         std::cout << "Invalid direction!" << std::endl;
-        return; // Exit the function if direction is invalid
+        return false; // Exit the function if direction is invalid
     }
 
     // Check if the new position is within the map boundaries
     if (newX < 0 || newX >= grid[0].size() || newY < 0 || newY >= grid.size()) {
         std::cout << "Cannot move outside of the map!" << std::endl;
-        return;
+        return false;
     }
 
     // Check if the new position is not a wall
     if (grid[newY][newX] == WALL) {
         std::cout << "Cannot move into a wall!" << std::endl;
-        return;
+        return false;
     }
 
     // Check if the new position is an enemy
     if (grid[newY][newX] == ENEMY) {
         std::cout << "Prepare for combat!" << std::endl;
         // Implement combat logic here
-        return;
+        bool startCombat;
+        startCombat = true;
+        return startCombat;
     }
 
     // Check if the new position is a door
     if (grid[newY][newX] == DOOR) {
         std::cout << "You encountered a door! Generating a new room..." << std::endl;
         // Generate a different room (to be implemented)
-        return;
+   
+        if (newX == 3 && newY == 4) {
+            roomNumber = 1;
+        }
+        else if (newX == 3 && newY == 10) {
+            roomNumber = 2;
+        }
+        else if(newX == 6 && newY == 8) {
+            roomNumber = 3;
+        }
+        generateNewRoom(roomNumber);
+        return true;
     }
 
     // Move the player to the new position
@@ -173,5 +187,53 @@ void Map::movePlayer()
     playerX = newX; // Update player's x-coordinate
     playerY = newY; // Update player's y-coordinate
     grid[playerY][playerX] = PLAYER; // Place player at the new position
+
+    return false;
+}
+
+void Map::room1()
+{
+
+    grid = std::vector<std::vector<char>>(20, std::vector<char>(10, EMPTY_SPACE));
+    placeDoor(3, 4);
+    placePlayer(1, 1);
+    placeEnemy(4, 5);
+    placeWall(2, 3);
+}
+
+void Map::room2()
+{
+    grid = std::vector<std::vector<char>>(8, std::vector<char>(8, EMPTY_SPACE));
+    placeDoor(3, 10);
+    placePlayer(1, 4);
+    placeEnemy(4, 1);
+    placeWall(1, 3);
+}
+
+void Map::room3()
+{
+    grid = std::vector<std::vector<char>>(10, std::vector<char>(40, EMPTY_SPACE));
+    placeDoor(6, 8);
+    placePlayer(10, 2);
+    placeEnemy(7, 2);
+    placeWall(7, 10);
+}
+
+void Map::generateNewRoom(int roomNumber)
+{
+    grid.clear();
+
+    switch (roomNumber) {
+    case 1:
+        room1();
+        break;
+    case 2:
+        room2();
+        break;
+    case 3:
+        room3();
+        break;
+    }
+  
 }
 

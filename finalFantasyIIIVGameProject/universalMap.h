@@ -39,7 +39,11 @@ public:
 	void placeEnemy(int, int);		// used to place enemy for rooms
 	void placeWall(int, int);		// used to place wall for rooms
 	void placeDoor(int, int);		// used to place doors for rooms
-	void movePlayer();				// used to move the player
+	bool movePlayer();				// used to move the player
+	void room1();
+	void room2();
+	void room3();
+	void generateNewRoom(int);
 
 	
 	
