@@ -171,12 +171,15 @@ bool Map::movePlayer()
    
         if (newX == 3 && newY == 4) {
             roomNumber = 1;
+            std::cout << 1;
         }
         else if (newX == 3 && newY == 10) {
             roomNumber = 2;
+            std::cout << 2;
         }
-        else if(newX == 6 && newY == 8) {
+        else if(newX == 2 && newY == 3) {
             roomNumber = 3;
+            std::cout << 3;
         }
         generateNewRoom(roomNumber);
         return true;
@@ -195,7 +198,7 @@ void Map::room1()
 {
 
     grid = std::vector<std::vector<char>>(20, std::vector<char>(10, EMPTY_SPACE));
-    placeDoor(3, 4);
+    placeDoor(3, 10);
     placePlayer(1, 1);
     placeEnemy(4, 5);
     placeWall(2, 3);
@@ -204,7 +207,7 @@ void Map::room1()
 void Map::room2()
 {
     grid = std::vector<std::vector<char>>(8, std::vector<char>(8, EMPTY_SPACE));
-    placeDoor(3, 10);
+    placeDoor(2, 3);
     placePlayer(1, 4);
     placeEnemy(4, 1);
     placeWall(1, 3);
@@ -213,7 +216,7 @@ void Map::room2()
 void Map::room3()
 {
     grid = std::vector<std::vector<char>>(10, std::vector<char>(40, EMPTY_SPACE));
-    placeDoor(6, 8);
+    placeDoor(3, 2);
     placePlayer(10, 2);
     placeEnemy(7, 2);
     placeWall(7, 10);

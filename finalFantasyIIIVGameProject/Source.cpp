@@ -16,13 +16,12 @@ int main() {
 	int SIZE = 20;
 	int i = 0;
 	
-
+	myMap.placePlayer(1, 4);
+	myMap.placeDoor(3, 4);
 	myMap.printMap();
 	while (true) {
-		if (myMap.movePlayer()) {
-
-			myMap.printMap();
-		}
+		myMap.movePlayer();
+		myMap.printMap();
 	}
 
 }
