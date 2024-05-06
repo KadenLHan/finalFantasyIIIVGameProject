@@ -117,6 +117,8 @@ bool Map::movePlayer()
 {
     char direction;
     int roomNumber = 0;
+    Combat combatStart;
+    bool combatHasStarted = false;
     std::cout << "Enter direction (w = up, a = left, s = down, d = right): ";
     std::cin >> direction;
 
@@ -158,10 +160,9 @@ bool Map::movePlayer()
     // Check if the new position is an enemy
     if (grid[newY][newX] == ENEMY) {
         std::cout << "Prepare for combat!" << std::endl;
-        // Implement combat logic here
-        bool startCombat;
-        startCombat = true;
-        return startCombat;
+        
+        combatHasStarted = true;
+        return combatHasStarted;
     }
 
     // Check if the new position is a door
@@ -190,6 +191,11 @@ bool Map::movePlayer()
     playerX = newX; // Update player's x-coordinate
     playerY = newY; // Update player's y-coordinate
     grid[playerY][playerX] = PLAYER; // Place player at the new position
+
+    if (combatHasStarted) {
+        combatStart.startCombat();
+        combatStart.displayCommands();
+    }
 
     return false;
 }

@@ -4,6 +4,10 @@
 
 #include "universalEnemyInformation.h"			// uses both enemy and player information for combat
 #include "universalPlayerInformation.h"
+#include "universalEnemyFactor.h"
+#include "universalPlayerFactory.h"
+#include <iostream>
+#include <iomanip>
 
 
 // univeral combat logic-how combat will work in this game.
@@ -49,6 +53,7 @@ public:
 	int RoundTracker();
 
 	void startCombat();
+	void displayCommands();
 
 
 

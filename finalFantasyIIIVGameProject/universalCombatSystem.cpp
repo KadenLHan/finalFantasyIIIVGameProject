@@ -127,7 +127,8 @@ void Combat::startCombat()
         int turn = CalculateTurn(PlayerInformation.getPlayerMovement(), EnemyInformation.getEnemyMovement());
 
         if (turn == 1) {
-            
+            displayCommands();
+
         }
         else {
 
@@ -145,4 +146,24 @@ void Combat::startCombat()
             PlayerInformation.setUltimateAttackGuage(true);
         }
     }
+}
+
+void Combat::displayCommands()
+{
+    const int columnWidth = 20;
+
+   
+    std::cout << std::setw(columnWidth) << std::left << "a) Attack";
+
+    
+    std::cout << std::setw(columnWidth) << std::left << "b) Special Attack" << std::endl;
+
+    
+    std::cout << std::setfill('-') << std::setw(columnWidth) << "" << "+" << std::setw(columnWidth) << "" << std::setfill(' ') << std::endl;
+
+   
+    std::cout << std::setw(columnWidth) << std::left << "c) Ultimate Attack";
+
+   
+    std::cout << std::setw(columnWidth) << std::left << "d) Item" << std::endl;
 }
