@@ -219,7 +219,7 @@ void Map::room3()
     placeDoor(3, 2);
     placePlayer(10, 2);
     placeEnemy(7, 2);
-    placeWall(7, 10);
+    placeWall(7, 3);
 }
 
 void Map::generateNewRoom(int roomNumber)

@@ -15,7 +15,7 @@ protected:
 	std::string name;						// enemy's name
 	std::string specialAttack;				//their special attack(if applicable)
 	std::string weakness;					// enemy's weakness
-	std::string enemyMovement;				//used for who goes first
+	int enemyMovement;						//used for who goes first
 
 public:
 
@@ -39,8 +39,8 @@ public:
 	void setWeakness(std::string);
 	std::string getWeakness() const;
 
-	void setEnemyMovement(std::string);
-	std::string getEnemyMovement() const;
+	void setEnemyMovement(int);
+	int getEnemyMovement() const;
 
 	void setCanFly(bool);
 	bool getCanFly() const;

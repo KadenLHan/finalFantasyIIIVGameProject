@@ -24,6 +24,9 @@
     <ClInclude Include="universalMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="universalCombatSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="universalEnemyInformation.cpp">
@@ -36,6 +39,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="universalCombatSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

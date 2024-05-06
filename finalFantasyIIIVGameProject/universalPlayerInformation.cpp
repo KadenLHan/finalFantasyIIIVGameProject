@@ -71,12 +71,12 @@ void Player::setUltimateAttackGuage(bool hasUltimate)
 	 ultimateAttackGuage = hasUltimate;
 }
 
-std::string Player::getPlayerMovement() const
+int Player::getPlayerMovement() const
 {
 	return playersMovement;
 }
 
-void Player::setPlayerMovement(std::string characterMovement)
+void Player::setPlayerMovement(int characterMovement)
 {
 	playersMovement = characterMovement;
 }

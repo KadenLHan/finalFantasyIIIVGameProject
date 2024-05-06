@@ -13,8 +13,6 @@ using namespace std;
 int main() {
 	Map myMap;
 	 
-	int SIZE = 20;
-	int i = 0;
 	
 	myMap.placePlayer(1, 4);
 	myMap.placeDoor(3, 4);

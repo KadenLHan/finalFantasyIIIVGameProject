@@ -60,15 +60,15 @@ std::string Enemy::getWeakness () const
 	return std::string(weakness);
 }
 
-void Enemy::setEnemyMovement(std::string eMovement)
+void Enemy::setEnemyMovement(int eMovement)
 {
 	enemyMovement = eMovement;
 }
 
 
-std::string Enemy::getEnemyMovement() const
+int Enemy::getEnemyMovement() const
 {
-	return std::string(enemyMovement);
+	return enemyMovement;
 }
 
 void Enemy::setCanFly(bool enemyFly)
