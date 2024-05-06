@@ -23,7 +23,7 @@ protected:
 
 public:
 	
-	Player(double health = 0, double mana = 0):HP(health),Mana(mana),specialAttackGuage(false),ultimateAttackGuage(false){}
+	Player();
 
 	void setHp(double);
 	double getHp() const;

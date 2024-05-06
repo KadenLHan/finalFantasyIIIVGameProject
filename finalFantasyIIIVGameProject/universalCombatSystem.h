@@ -10,7 +10,7 @@
 
 class Combat {
 protected:
-	double turn;								//used to calculate turn
+								
 	double damage;								// used to calculate how much an attack does
 	std::string choice;							// used to calculate the choice of the user	
 	std::string Status;							// used to calculate if they have debuffs or buffs or not
@@ -26,8 +26,7 @@ public:
 
 	Combat();
 
-	double getTurn() const;
-	void setTurn(int);
+	
 
 	double getDamage() const;
 	void setDamage(int);
@@ -45,6 +44,11 @@ public:
 	double howMuchEnemyDamage(double, double);
 
 	int CalculateTurn(int,int);
+
+	bool playerManaTracker(double, double);
+	int RoundTracker();
+
+	void startCombat();
 
 
 

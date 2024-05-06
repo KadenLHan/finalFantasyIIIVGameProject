@@ -1,5 +1,15 @@
 #include "universalEnemyInformation.h"
 
+Enemy::Enemy()
+{
+	HP = 0;
+	useSpells = false;
+	canFly = false;
+	canMove = false;
+	useSpecial = false;
+	enemyMovement = 0;
+}
+
 double Enemy::getHP() const
 {
 	return HP;

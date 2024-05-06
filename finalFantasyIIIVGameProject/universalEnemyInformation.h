@@ -19,7 +19,7 @@ protected:
 
 public:
 
-	Enemy(double health) :HP(health), useSpecial(false), useSpells(false), canMove(false), canFly(false){}
+	Enemy();
 
 	double getHP() const;
 	void setHP(double);

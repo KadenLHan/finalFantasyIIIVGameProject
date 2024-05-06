@@ -27,6 +27,9 @@
     <ClInclude Include="universalCombatSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="universalPlayerFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="universalEnemyInformation.cpp">

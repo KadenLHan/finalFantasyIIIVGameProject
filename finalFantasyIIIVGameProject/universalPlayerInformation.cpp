@@ -1,5 +1,14 @@
 #include "universalPlayerInformation.h"
 
+Player::Player()
+{
+	HP = 0;
+	Mana = 0;
+	specialAttackGuage = false;
+	ultimateAttackGuage = false;
+	playersMovement = 0;
+}
+
 void Player::setHp(double health)
 {
 	HP = health;
