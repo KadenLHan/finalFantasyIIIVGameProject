@@ -14,6 +14,7 @@ public:
 		guard.setEnemyMovement(20);
 		guard.setName("GuardsMan");
 		guard.setWeakness("Wind");
+		return guard;
 	}
 };
 #endif // !Universal_EnemyFactory

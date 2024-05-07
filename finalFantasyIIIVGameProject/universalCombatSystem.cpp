@@ -4,6 +4,8 @@
 
 
 
+
+
 Combat::Combat()
 {
     damage = 0;
@@ -87,9 +89,9 @@ double Combat::howMuchEnemyDamage(double health, double PlayerDamage)
     return totalDamageToEnemy;      
 }
 
-int Combat::CalculateTurn(int playersMovement,int enemysMovement)                                // uses both movement for the enemy and the player and calculates who goes first in the turn uses both 1 and 2 if its 1 player goes first and vice versa
+int Combat::CalculateTurn(Player playersMovement, Enemy enemysMovement)                                // uses both movement for the enemy and the player and calculates who goes first in the turn uses both 1 and 2 if its 1 player goes first and vice versa
 {
-    if (playersMovement > enemysMovement) {
+    if (playersMovement.getPlayerMovement() > enemysMovement.getEnemyMovement()) {
         return 1;
     }
     else {
@@ -120,18 +122,21 @@ void Combat::startCombat()
 {
     int round = 0;
     bool combatIsOver = false;
+    PlayerFactory FactoryPlayer;
+    EnemyFactory FactoryEnemy;
 
     while (!combatIsOver) {
         round++;
 
-        int turn = CalculateTurn(PlayerInformation.getPlayerMovement(), EnemyInformation.getEnemyMovement());
+        int turn = CalculateTurn(FactoryPlayer.createCloud(),FactoryEnemy.createGuard());
 
         if (turn == 1) {
-            displayCommands();
-
+          displayCommands();
+          break;
         }
         else {
-
+            std::cout << "The Enemy Has Attacked!\n";
+            howMuchPlayerDamage(200, 20);
         }
 
         if (getIsPlayerDead() || getIsEnemyDead()) {

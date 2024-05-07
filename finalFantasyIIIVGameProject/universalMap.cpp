@@ -158,11 +158,10 @@ bool Map::movePlayer()
     }
 
     // Check if the new position is an enemy
-    if (grid[newY][newX] == ENEMY) {
-        std::cout << "Prepare for combat!" << std::endl;
-        
+    if (grid[newY][newX] == ENEMY) {      
         combatHasStarted = true;
-        return combatHasStarted;
+        std::cout << "Combat has Started!" << std::endl;
+       
     }
 
     // Check if the new position is a door
@@ -178,7 +177,7 @@ bool Map::movePlayer()
             roomNumber = 2;
             std::cout << 2;
         }
-        else if(newX == 2 && newY == 3) {
+        else if(newX == 4 && newY == 3) {
             roomNumber = 3;
             std::cout << 3;
         }
@@ -192,9 +191,9 @@ bool Map::movePlayer()
     playerY = newY; // Update player's y-coordinate
     grid[playerY][playerX] = PLAYER; // Place player at the new position
 
-    if (combatHasStarted) {
+    if (combatHasStarted == true) {
         combatStart.startCombat();
-        combatStart.displayCommands();
+        return combatHasStarted;
     }
 
     return false;
@@ -213,19 +212,30 @@ void Map::room1()
 void Map::room2()
 {
     grid = std::vector<std::vector<char>>(8, std::vector<char>(8, EMPTY_SPACE));
-    placeDoor(2, 3);
+    placeDoor(4, 3);
     placePlayer(1, 4);
-    placeEnemy(4, 1);
-    placeWall(1, 3);
+    placeEnemy(2, 7);
+    int placingWall = 0;
+    for (int i = 0; i < 6; i++) {
+
+        placeWall(2, placingWall);
+        placingWall++;
+    }
+
 }
 
 void Map::room3()
 {
     grid = std::vector<std::vector<char>>(10, std::vector<char>(40, EMPTY_SPACE));
-    placeDoor(3, 2);
+    placeDoor(2, 5);
     placePlayer(10, 2);
-    placeEnemy(7, 2);
-    placeWall(7, 3);
+    placeEnemy(3, 2);
+    int placingWall = 0;
+    for (int i = 0; i < 9; i++) {
+        
+        placeWall(7, placingWall);
+        placingWall++;
+    }
 }
 
 void Map::generateNewRoom(int roomNumber)

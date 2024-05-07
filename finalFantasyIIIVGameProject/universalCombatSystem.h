@@ -47,7 +47,7 @@ public:
 	double howMuchPlayerDamage(double, double);
 	double howMuchEnemyDamage(double, double);
 
-	int CalculateTurn(int,int);
+	int CalculateTurn(Player,Enemy);
 
 	bool playerManaTracker(double, double);
 	int RoundTracker();

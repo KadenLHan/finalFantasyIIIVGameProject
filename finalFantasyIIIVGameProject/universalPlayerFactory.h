@@ -17,6 +17,7 @@ public:
 		cloud.setSpecialAttack("Breaker");
 		cloud.setSpecialAttackGuage(false);
 		cloud.setUltimateAttackGuage(false);
+		return cloud;
 	}
 	static Player Barett() {
 		Player barett;
@@ -29,6 +30,7 @@ public:
 		barett.setSpecialAttack("Focused Shot");
 		barett.setSpecialAttackGuage(false);
 		barett.setUltimateAttackGuage(false);
+		return barett;
 	}
 
 
